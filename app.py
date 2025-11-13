@@ -259,7 +259,7 @@ if __name__ == '__main__':
         print("\n⚠ Warning: Gemini client not initialized!")
         print("  Please check your .env configuration\n")
 
-    print(f"Server running at: http://localhost:5000")
+    print(f"Server running at: http://localhost:5001")
     print(f"API endpoints:")
     print(f"  POST /api/chat      - Send a message")
     print(f"  GET  /api/history   - Get chat history")
@@ -269,6 +269,6 @@ if __name__ == '__main__':
 
     app.run(
         host='0.0.0.0',
-        port=5000,
+        port=5001,
         debug=Config.DEBUG
     )

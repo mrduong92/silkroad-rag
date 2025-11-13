@@ -1,0 +1,612 @@
+[
+  {
+    "id": 1,
+    "question": "Hệ thống EBES cần tuân theo những tiêu chuẩn nào để kiểm tra khả năng chống thấm nước?",
+    "answer": "Các tiêu chuẩn liên quan gồm AAMA 501.2, ASTM E331 và ASTM E1105, quy định phương pháp thử khả năng thấm nước của hệ thống tường kính, cửa sổ và cửa ngoài"
+  },
+  {
+    "id": 2,
+    "question": "Trong hệ thống vỏ bảo vệ ngoài nhà (EBES) bao gồm những loại vật liệu hoặc cấu kiện nào?",
+    "answer": "Hệ thống EBES bao gồm các sản phẩm và vật liệu như nhôm ép đùn, tấm nhôm, kính, thép không gỉ, thép mạ kẽm, đá vôi khối, keo trám khe đàn hồi và vật liệu cách nhiệt. Các tiêu chuẩn vật liệu liên quan gồm ASTM B209M, B221M, A167, A653/A653M, C568, C920, C1048, C1193, CAN/ULC S702, S705.1"
+  },
+  {
+    "id": 3,
+    "question": "Lớp phủ nhôm dùng cho mặt dựng có yêu cầu kỹ thuật cụ thể nào về độ bền hoặc hiệu suất không?",
+    "answer": "Có. Lớp phủ hữu cơ trên nhôm ép đùn và tấm nhôm phải đáp ứng các tiêu chuẩn AAMA 2603 và AAMA 2605 về yêu cầu hiệu suất và quy trình thử nghiệm"
+  },
+  {
+    "id": 4,
+    "question": "Các tiêu chuẩn kiểm tra khả năng chịu gió và độ kín khí của tường kính được áp dụng theo quy định nào?",
+    "answer": "Hệ thống EBES phải tuân theo ASTM E283 để xác định tốc độ rò rỉ không khí và ASTM E330 để kiểm tra khả năng chịu tải kết cấu dưới áp suất không khí tĩnh đồng đều"
+  },
+  {
+    "id": 5,
+    "question": "Có tiêu chuẩn nào hướng dẫn cách lắp đặt, vệ sinh và bảo trì nhôm kiến trúc không?",
+    "answer": "Tiêu chuẩn AAMA 609 & 610 cung cấp hướng dẫn vệ sinh và bảo trì nhôm hoàn thiện kiến trúc, và AAMA CW-10 hướng dẫn chăm sóc, xử lý nhôm từ xưởng đến công trường"
+  },
+  {
+    "id": 6,
+    "question": "Ở khu vực Toronto, những loại vật liệu cách nhiệt nào đạt tiêu chuẩn/ được cho phép sử dụng cho hệ thống vỏ ngoài tòa nhà?",
+    "answer": "Các tiêu chuẩn liên quan gồm CAN/ULC S702 về cách nhiệt bằng sợi khoáng và CAN/ULC S705.1 về vật liệu cách nhiệt bọt polyurethane phun cứng, tỷ trọng trung bình."
+  },
+  {
+    "id": 7,
+    "question": "Vật liệu dùng cho hệ thống vỏ ngoài kiểm tra khả năng cháy sử dụng theo phương pháp nào?",
+    "answer": "Tiêu chuẩn ULC S135 quy định phương pháp thử xác định các thông số cháy của vật liệu xây dựng bằng máy đo nhiệt lượng tiêu thụ oxy - Cone Calorimeter"
+  },
+  {
+    "id": 8,
+    "question": "Sự khác biệt giữa tiêu chuẩn ASTM của Mỹ và tiêu chuẩn CSA của Canada trong thiết kế mặt dựng là gì?",
+    "answer": "ASTM tập trung vào các phương pháp thử nghiệm vật liệu và hiệu suất của hệ thống (như rò rỉ không khí, chịu tải gió, chống thấm nước). CSA và CAN/ULC là các tiêu chuẩn Canada, chủ yếu quy định về thiết kế kết cấu thép, nhôm, vật liệu cách nhiệt, và kiểm thử an toàn cháy cho công trình."
+  },
+  {
+    "id": 9,
+    "question": "Khi thực hiện dự án tại Ontario, cần tuân thủ những tiêu chuẩn thiết kế và vật liệu nào của Canada cho hệ thống mặt dựng?",
+    "answer": "Các tiêu chuẩn Canada áp dụng gồm CSA S16 (thiết kế thép), CSA S157-M (thiết kế nhôm), CAN/ULC S702 và S705.1 (vật liệu cách nhiệt), cùng các tiêu chuẩn kính của CAN/CGSB."
+  },
+  {
+    "id": 10,
+    "question": "Công thức tính hệ số truyền nhiệt U-value cho các vùng của hệ thống tường kính (curtain wall) dựa trên kết quả mô phỏng nhiệt như thế nào?",
+    "answer": "Hệ số truyền nhiệt (U-value) được xác định thông qua mô phỏng nhiệt bằng phần mềm THERM 6 của Lawrence Berkeley Laboratory (LBL) và các mô phỏng truyền nhiệt ba chiều, hoặc dựa trên kết quả thử nghiệm theo AAMA 1503 và AAMA 501.5. Giá trị U-value khuyến nghị tối đa cho hệ thống là 1.18 W/m²K."
+  },
+  {
+    "id": 11,
+    "question": "Các giải pháp kỹ thuật nào giúp đảm bảo hệ EBES chống ngưng tụ hơi nước trong điều kiện nhiệt độ và độ ẩm khác nhau?",
+    "answer": "Để tránh ngưng tụ hơi nước, thiết kế cần xét đến điều kiện nhiệt độ và độ ẩm trong và ngoài nhà, đồng thời đảm bảo các lớp cản không khí, màng ngăn hơi ẩm và hệ thống thoát nước được bố trí hợp lý và hoạt động hiệu quả."
+  },
+  {
+    "id": 12,
+    "question": "Tỷ lệ giới hạn khí thấm qua hệ tường kính, cửa và tường đặc trong các bài thử ASTM E283 hiện đạt mức nào và các biện pháp thi công cần chú ý để đảm bảo?",
+    "answer": "Theo tiêu chuẩn ASTM E283, giới hạn khí thấm cho hệ EBES là 0.1 L/s·m² đối với vách kính, 0.5 L/s·m² cho cửa sổ mở, và 0.1 L/s·m² cho tường đặc. Việc thi công cần đặc biệt chú trọng đến gioăng kín, lớp đệm và kết cấu ghép nối, nhằm đảm bảo hệ thống đạt tiêu chuẩn yêu cầu."
+  },
+  {
+    "id": 13,
+    "question": "Các tiêu chuẩn quốc gia như CSA S157-M và CSA S16/S136 liên quan đến thiết kế khung nhôm, thép trong hệ EBES cần phải tuân thủ như thế nào?",
+    "answer": "Khung nhôm trong hệ EBES phải được thiết kế theo CAN/CSA-S157-M, còn khung thép theo CSA S16 và CSA S136. Các tiêu chuẩn này đảm bảo độ bền, khả năng chịu tải và tuân thủ các yêu cầu của Bộ Xây dựng Canada."
+  },
+  {
+    "id": 14,
+    "question": "Những chiến lược nào để tối ưu hệ dịch chuyển, mở rộng co rút trong hệ EBES mà không gây ảnh hưởng đến cấu trúc hoặc hiệu suất cách âm, cách nhiệt?",
+    "answer": "Hệ thống cần tính toán chuyển vị ±20 mm để đáp ứng co giãn nhiệt và biến dạng kết cấu. Cần sử dụng khe co giãn và vật liệu đàn hồi phù hợp để tránh nứt gãy hoặc ảnh hưởng đến cách âm, cách nhiệt và tính thẩm mỹ."
+  },
+  {
+    "id": 15,
+    "question": "Trong quá trình thiết kế, cách xác định và tích hợp các hệ lớp cản không khí, màng ngăn hơi ẩm và hệ mưa chắn để đảm bảo tính liên tục của hệ thống là gì?",
+    "answer": "Các lớp cản không khí, màng ngăn hơi ẩm và hệ mưa chắn phải được thiết kế và kết nối liên tục giữa các chi tiết giao nhau. Thiết kế cần tuân theo hướng dẫn Rain Screen Principles của Hội đồng Nghiên cứu Quốc gia Canada (NRC) để giảm thiểu cầu nhiệt."
+  },
+  {
+    "id": 16,
+    "question": "Làm thế nào để thiết kế hệ thống EBES có khả năng chịu lực, chống rung lắc và các biến dạng kết cấu mà vẫn đảm bảo tính thẩm mỹ và hiệu suất kỹ thuật?",
+    "answer": "Các cấu kiện của hệ EBES phải chịu được tải trọng bản thân, tải gió và biến dạng nhiệt mà vẫn duy trì tính thẩm mỹ. Các yếu tố như âm thanh, rung động và biến dạng đều cần được phân tích trong giai đoạn thiết kế."
+  },
+  {
+    "id": 17,
+    "question": "Các phương pháp kiểm tra, đánh giá khả năng thoát nước, chống thấm, đảm bảo không khí và khói theo tiêu chuẩn ASTM E331, E1105 cần thực hiện như thế nào?",
+    "answer": "Khả năng chống thấm và thoát nước của hệ EBES phải được kiểm tra theo ASTM E331 và ASTM E1105 để đảm bảo không khí và nước không xâm nhập vào bên trong, đồng thời hệ thống thoát nước hoạt động hiệu quả."
+  },
+  {
+    "id": 18,
+    "question": "Dựa trên kinh nghiệm thực tiễn, những lưu ý nào giúp tối ưu việc thi công hệ EBES để đảm bảo các yêu cầu về chống gió, chống nước, và tác động của khí hậu nóng/lạnh trong môi trường đô thị như Toronto?",
+    "answer": "Trong thi công thực tế, cần chú ý đến các chi tiết như hệ thoát nước, chống gió, chống thấm, và đảm bảo độ chính xác lắp đặt. Việc tuân thủ đúng quy trình sẽ giúp hệ EBES hoạt động ổn định, phù hợp với điều kiện khí hậu khắc nghiệt và đô thị của Toronto."
+  },
+  {
+    "id": 19,
+    "question": "Những loại hệ mặt dựng (curtain wall system) nào thường được sử dụng trong các dự án cao tầng ở Toronto?",
+    "answer": "Ở Toronto sử dụng hệ mặt dựng cân bằng áp suất với mối nối khô và hệ thoát nước trong được thiết kế cho công trình cao tầng."
+  },
+  {
+    "id": 20,
+    "question": "Cung cấp các dạng profile và lớp hoàn thiện tiêu chuẩn cho hệ nhôm định hình dùng trong EBES không?",
+    "answer": "Các thanh nhôm định hình được hoàn thiện theo tiêu chuẩn AAMA 2605, sử dụng lớp phủ hữu cơ hiệu suất cao để tăng độ bền."
+  },
+  {
+    "id": 21,
+    "question": "Độ dày và cấu tạo kính như thế nào để đạt hệ số truyền nhiệt U-value theo yêu cầu dự án cao tầng ở khu vực Toronto?",
+    "answer": "Hệ số truyền nhiệt U-value được xác định bằng mô phỏng THERM 6 và mô hình nhiệt 3D theo tiêu chuẩn NFRC 100 và NFRC 200."
+  },
+  {
+    "id": 22,
+    "question": "Loại keo trám nào được khuyến nghị cho hệ mối nối khô trong mặt dựng cân bằng áp suất?",
+    "answer": "Hệ thống sử dụng mối nối khô với nguyên lý cân bằng áp suất, hạn chế dùng keo silicone kết cấu, chỉ dùng keo chống thấm được phê duyệt khi cần."
+  },
+  {
+    "id": 23,
+    "question": "Có hệ thống nào đã được kiểm định đáp ứng đồng thời tiêu chuẩn ASTM và CSA về hiệu suất mặt dựng không?",
+    "answer": "Hệ EBES được thiết kế và thử nghiệm theo tiêu chuẩn ASTM nhưng các thành phần và tiêu chí hiệu suất phù hợp với yêu cầu CSA của Canada."
+  },
+  {
+    "id": 24,
+    "question": "NFRC 100 khác NFRC 200 như thế nào trong việc đánh giá hiệu suất nhiệt?",
+    "answer": "NFRC 100 quy định hệ số truyền nhiệt (U-value), còn NFRC 200 quy định hệ số hấp thu nhiệt mặt trời (SHGC) và độ truyền sáng (VT)."
+  },
+  {
+    "id": 25,
+    "question": "Khi thử nghiệm rò rỉ không khí theo ASTM E283, mức rò rỉ cho phép thường yêu cầu là bao nhiêu đối với hệ mặt dựng CW?",
+    "answer": "Theo ASTM E283, mức rò rỉ không khí cho phép của mặt dựng được quy định trong yêu cầu dự án, đo ở các chênh áp xác định."
+  },
+  {
+    "id": 26,
+    "question": "Ở Canada, tiêu chuẩn nào quy định việc sử dụng keo silicone kết cấu trong hệ mặt dựng?",
+    "answer": "Keo silicone kết cấu dùng trong hệ mặt dựng phải tuân theo ASTM C1184 và hướng dẫn CSA liên quan."
+  },
+  {
+    "id": 27,
+    "question": "Yêu cầu về hiệu suất mặt dựng ở Toronto khác gì so với Vancouver do khác biệt khí hậu?",
+    "answer": "oronto yêu cầu hệ thống có độ kín khí và chống thấm cao hơn do khí hậu lạnh và gió mạnh hơn so với Vancouver."
+  },
+  {
+    "id": 28,
+    "question": "Có nghiên cứu hoặc ví dụ thực tế nào về độ bền lâu dài của lớp phủ AAMA 2605 trong khí hậu lạnh không?",
+    "answer": "Lớp phủ AAMA 2605 được chỉ định nhờ hiệu suất và độ bền cao, phù hợp với khí hậu khắc nghiệt của Canada."
+  },
+  {
+    "id": 29,
+    "question": "Ngoài THERM 6, ở Canada thường sử dụng phần mềm nào để mô phỏng U-value?",
+    "answer": "EBES quy định sử dụng phần mềm THERM 6 của Lawrence Berkeley Laboratory để mô phỏng U-value"
+  },
+  {
+    "id": 30,
+    "question": "Thử nghiệm thấm nước tại công trường theo ASTM E1105 được tiến hành như thế nào?",
+    "answer": "Thử nghiệm thấm nước tại công trường theo ASTM E1105, sử dụng chênh áp được hiệu chuẩn và phun nước đều lên khu vực thử."
+  },
+  {
+    "id": 31,
+    "question": "Cần đảm bảo tính tương thích giữa lớp phủ nhôm và vật liệu trám khe như thế nào?",
+    "answer": "Độ tương thích được đảm bảo bằng cách dùng keo trám và lớp phủ đã được thử nghiệm cùng nhau theo tiêu chuẩn ASTM và hướng dẫn nhà sản xuất."
+  },
+  {
+    "id": 32,
+    "question": "Có thể giảm hiện tượng cầu nhiệt trong thiết kế thanh đứng bằng những biện pháp nào?",
+    "answer": "Hiện tượng cầu nhiệt được giảm bằng cách dùng lớp cách nhiệt trong thanh đứng và vật liệu dẫn nhiệt thấp như thiết kế của hệ EBES."
+  },
+  {
+    "id": 33,
+    "question": "Những điểm kiểm soát chất lượng nào là quan trọng nhất trong quá trình thử nghiệm hệ mặt dựng?",
+    "answer": "Các điểm kiểm soát chất lượng quan trọng gồm thử nghiệm rò rỉ khí/nước, khả năng chịu tải và kiểm tra trực quan phần keo trám."
+  },
+  {
+    "id": 34,
+    "question": "Những loại kính hộp cách nhiệt (IGU) nào thường được sử dụng trong hệ thống EBES tương tự The One, Toronto?",
+    "answer": "Kính hộp cách nhiệt (IGU) trong hệ EBES được thiết kế theo yêu cầu riêng của dự án, có lớp phủ low-E và tuân thủ tiêu chuẩn NFRC 100, NFRC 200 về hiệu suất truyền nhiệt."
+  },
+  {
+    "id": 35,
+    "question": "Có những nhà cung cấp nào được phê duyệt cho loại kính thân thiện với chim theo Tiêu chuẩn Xanh Toronto?",
+    "answer": "Vật liệu kính phải đáp ứng yêu cầu hiệu suất của thiết kế, bao gồm độ truyền sáng, phản xạ và cách nhiệt."
+  },
+  {
+    "id": 36,
+    "question": "Những loại màng chắn hơi và màng chắn khí nào tương thích với hệ EBES tích hợp?",
+    "answer": "Tất cả các thành phần của EBES phải tương thích với hệ thống chắn khí, chắn hơi và chống ẩm lân cận để đảm bảo tính liên tục của vỏ bao công trình."
+  },
+  {
+    "id": 37,
+    "question": "Các kỹ sư thường đảm bảo tính liên tục giữa lớp chắn hơi và lớp chắn khí trong hệ EBES phức tạp như thế nào?",
+    "answer": "Hệ EBES được thiết kế như một hệ thống tích hợp, đảm bảo tính liên tục của lớp chắn khí, hơi và nhiệt qua mọi mối nối."
+  },
+  {
+    "id": 38,
+    "question": "Những phương pháp phổ biến nào được dùng để giảm thiểu cầu nhiệt trong vách kính và hệ ốp tường?",
+    "answer": "Cần bố trí lớp cách nhiệt liên tục và thanh cách nhiệt để đảm bảo giá trị cách nhiệt theo mô phỏng bằng phần mềm THERM 6 của LBL."
+  },
+  {
+    "id": 39,
+    "question": "Giới hạn độ võng (L/tỷ lệ) thông thường của thanh thép chịu tải trong hệ mặt dựng là bao nhiêu?",
+    "answer": "Giới hạn độ võng của các cấu kiện phải tuân theo ASTM E330 và được kỹ sư có chứng chỉ hành nghề tại Ontario kiểm định."
+  },
+  {
+    "id": 40,
+    "question": "Hệ che nắng ngang được thiết kế như thế nào để vừa đảm bảo chức năng che nắng vừa hỗ trợ thiết bị lau kính?",
+    "answer": "Các thiết bị che nắng và phụ kiện phải được thiết kế như một phần tích hợp của hệ EBES để đáp ứng yêu cầu về tải và chuyển vị."
+  },
+  {
+    "id": 41,
+    "question": "Yếu tố nào quyết định việc tấm đá được thiết kế  tự do chuyển động hay cố định hoàn toàn?",
+    "answer": "Hệ thống phải cho phép biến dạng công trình, giãn nở nhiệt và sai lệch chuyển vị mà không làm hư hại đến các mối nối kín khí, kín nước."
+  },
+  {
+    "id": 42,
+    "question": "ASTM E283 (thử rò rỉ không khí) khác gì so với tiêu chuẩn CSA A440 áp dụng tại Canada?",
+    "answer": "Các tiêu chuẩn ASTM như E283, E330 và E331 tập trung vào thử nghiệm hiệu suất về rò rỉ không khí, chịu tải gió và thấm nước."
+  },
+  {
+    "id": 43,
+    "question": "Sự khác biệt chính giữa Bộ luật Xây dựng Quốc gia Canada (NBC) và Bộ luật Xây dựng Quốc tế Mỹ (IBC) về tải gió cho mặt dựng là gì?",
+    "answer": "Hệ EBES được thiết kế theo các yêu cầu của Bộ luật Xây dựng Canada và các tiêu chuẩn hiệu suất do CSA, CAN/ULC ban hành."
+  },
+  {
+    "id": 44,
+    "question": "Tiêu chuẩn châu Âu (EN) nào tương đương với ASTM E331 về thử nghiệm thấm nước?",
+    "answer": "Các tiêu chuẩn thử nghiệm tương đương được tham chiếu để đảm bảo tương thích với yêu cầu của cả ASTM (Mỹ) và CSA (Canada)."
+  },
+  {
+    "id": 45,
+    "question": "Cách áp dụng giới hạn độ võng (L/240 và L/360) có khác nhau giữa OBC và NBC không?",
+    "answer": "Tiêu chí thử nghiệm kết cấu và hiệu suất phải đáp ứng tiêu chuẩn nghiêm ngặt hơn trong hai hệ ASTM hoặc CSA, tùy trường hợp."
+  },
+  {
+    "id": 46,
+    "question": "Những hệ thống liên kết mặt dựng nào đã được sử dụng thành công trong các tòa nhà cao tầng ở Toronto tương tự The One?",
+    "answer": "Dự án The One áp dụng nguyên lý thiết kế và tiêu chuẩn EBES tương tự các hệ mặt dựng cao tầng khác tại Toronto."
+  },
+  {
+    "id": 47,
+    "question": "Các công trình xanh ở Canada hiện nay áp dụng hệ thống tường mưa điều áp như thế nào?",
+    "answer": "Hệ EBES sử dụng nguyên lý vỏ chống mưa điều áp, cho phép thoát nước có kiểm soát và cân bằng áp suất không khí."
+  },
+  {
+    "id": 48,
+    "question": "Các dự án EBES trước đây rút ra bài học gì về ứng suất nhiệt và rủi ro ngưng tụ của kính?",
+    "answer": "Thiết kế hệ thống giảm thiểu ngưng tụ và ứng suất nhiệt nhờ mô phỏng truyền nhiệt và chi tiết mối nối hợp lý."
+  },
+  {
+    "id": 49,
+    "question": "Neo chống động đất trong hệ EBES thường được thiết kế ra sao ở khu vực có địa chấn cao so với Ontario?",
+    "answer": "Các neo và giá đỡ kết cấu được thiết kế để chịu tải gió và cho phép chuyển vị công trình theo tính toán kỹ sư."
+  },
+  {
+    "id": 50,
+    "question": "Khi thay thế từng tấm ốp riêng lẻ, cần lưu ý gì để tránh ảnh hưởng đến các bộ phận liền kề?",
+    "answer": "Việc thay thế hoặc bảo trì tấm ốp phải thực hiện theo quy trình được nhà sản xuất và kỹ sư phê duyệt để giữ nguyên tính toàn vẹn của hệ thống."
+  },
+  {
+    "id": 51,
+    "question": "Những thách thức lớn nhất khi thi công đảm bảo tính kín khí và chống thấm là gì?",
+    "answer": "Việc lắp đặt đúng kỹ thuật, đảm bảo mối nối kín liên tục và căn chỉnh chính xác là điều kiện quan trọng để ngăn rò rỉ không khí và nước qua hệ EBES"
+  },
+  {
+    "id": 52,
+    "question": "Những thành phần chính nào được bao gồm trong Hệ thống Vỏ bao che bên ngoài công trình (EBES)?",
+    "answer": "Hệ EBES bao gồm tường kính, hệ thống kính, tấm spandrel, vật liệu cách nhiệt, chất trám khe, khung nhôm và toàn bộ phụ kiện đảm bảo độ kín khí và chống thấm nước."
+  },
+  {
+    "id": 53,
+    "question": "Hệ EBES yêu cầu các tiêu chí hiệu suất nào đối với rò rỉ không khí, chống thấm nước và tải trọng gió?",
+    "answer": "EBES tuân theo ASTM E283 cho rò rỉ không khí, ASTM E331 cho khả năng chống thấm nước và ASTM E330 cho khả năng chịu tải gió."
+  },
+  {
+    "id": 54,
+    "question": "Hệ số truyền nhiệt U-value của hệ mặt dựng được tính theo tiêu chuẩn EBES và NFRC như thế nào?",
+    "answer": "Hệ số truyền nhiệt U-value được tính toán bằng mô phỏng nhiệt qua phần mềm THERM 6 và kiểm chứng theo quy trình của NFRC 100 và NFRC 200."
+  },
+  {
+    "id": 55,
+    "question": "Những công cụ mô phỏng nào được chấp thuận cho phân tích nhiệt trong các dự án EBES, ví dụ như THERM 6?",
+    "answer": "THERM 6 của Phòng thí nghiệm Lawrence Berkeley là phần mềm được chấp thuận để phân tích nhiệt 2D và 3D trong thiết kế EBES."
+  },
+  {
+    "id": 56,
+    "question": "Mục đích của việc áp dụng nguyên lý cân bằng áp suất trong hệ tường kính là gì?",
+    "answer": "Mục đích là cân bằng áp suất bên trong và bên ngoài để ngăn nước thấm qua các mối nối mặt dựng."
+  },
+  {
+    "id": 57,
+    "question": "Các tiêu chuẩn ASTM E283, E330 và E331 khác nhau như thế nào trong việc kiểm thử hiệu suất mặt dựng?",
+    "answer": "ASTM E283 đo độ rò rỉ không khí, E330 kiểm tra khả năng chịu tải gió, còn E331 đánh giá khả năng chống nước dưới áp suất tĩnh."
+  },
+  {
+    "id": 58,
+    "question": "Tiêu chuẩn AAMA 2605 quy định những yêu cầu nào đối với lớp phủ nhôm dùng trong hệ EBES?",
+    "answer": "Lớp phủ phải chống phai màu, bong phấn và giảm độ bóng, đảm bảo độ bền lâu dài cho nhôm kiến trúc."
+  },
+  {
+    "id": 59,
+    "question": "Các thử nghiệm mẫu mô phỏng (mock-up) được thực hiện như thế nào để xác nhận thiết kế và hiệu suất của hệ mặt dựng?",
+    "answer": "Mẫu mô phỏng mặt dựng được chế tạo theo tỷ lệ thật và thử nghiệm các tiêu chí về không khí, nước và kết cấu trước khi lắp đặt tại công trường."
+  },
+  {
+    "id": 60,
+    "question": "Trước khi bắt đầu sản xuất, nhà thầu phải nộp những tài liệu nào theo mục “Hồ sơ đệ trình – Submittals” của EBES?",
+    "answer": "Bản vẽ xưởng, mẫu vật liệu, tính toán kết cấu và báo cáo mô phỏng nhiệt phải được nộp để phê duyệt."
+  },
+  {
+    "id": 61,
+    "question": "Chất trám khe và gioăng trong hệ mặt dựng cần được kiểm tra tính tương thích và khả năng chịu thời tiết như thế nào?",
+    "answer": "Chúng phải được kiểm tra tính tương thích và khả năng chịu thời tiết theo tiêu chuẩn ASTM và AAMA."
+  },
+  {
+    "id": 62,
+    "question": "Dung sai chế tạo tiêu chuẩn cho thanh nhôm định hình được quy định như thế nào trong EBES?",
+    "answer": "Dung sai chế tạo phải tuân theo tiêu chuẩn ANSI H35.1M về hệ thống ký hiệu hợp kim và xử lý nhiệt."
+  },
+  {
+    "id": 63,
+    "question": "Các tiêu chuẩn ASTM của Mỹ khác gì so với tiêu chuẩn CSA của Canada trong kiểm thử thiết kế mặt dựng?",
+    "answer": "ASTM tập trung vào thử nghiệm hiệu suất, trong khi CSA bổ sung các yêu cầu về kết cấu và vật liệu phù hợp với khí hậu Canada."
+  },
+  {
+    "id": 64,
+    "question": "Việc kiểm thử hiện trường đối với hệ mặt dựng đã lắp đặt được thực hiện như thế nào theo yêu cầu của EBES?",
+    "answer": "Các khu vực mặt dựng đã lắp đặt được kiểm tra tại hiện trường bằng hệ thống phun nước và đo áp suất đã hiệu chỉnh."
+  },
+  {
+    "id": 65,
+    "question": "NFRC 100 khác NFRC 200 như thế nào trong việc đánh giá hiệu suất truyền nhiệt?",
+    "answer": "NFRC 100 đo hệ số truyền nhiệt (U-factor), còn NFRC 200 đánh giá hệ số thu nhiệt mặt trời (SHGC)."
+  },
+  {
+    "id": 66,
+    "question": "Quy trình bảo trì và vệ sinh chính cho các thành phần nhôm và kính trong hệ EBES là gì?",
+    "answer": "Cần vệ sinh định kỳ bằng dung dịch trung tính và kiểm tra thường xuyên tình trạng chất trám khe và gioăng."
+  },
+  {
+    "id": 67,
+    "question": "Các lớp ngắt nhiệt được tích hợp vào hệ nhôm như thế nào để giảm truyền nhiệt?",
+    "answer": "Các vật liệu phi kim được chèn giữa các thanh nhôm để ngắt dòng truyền nhiệt."
+  },
+  {
+    "id": 68,
+    "question": "Theo kinh nghiệm thực tế, những lỗi phổ biến nhất trong quá trình lắp đặt hệ mặt dựng là gì?",
+    "answer": "Sai lệch lắp đặt, trám khe không đúng cách và cố định không đầy đủ là các lỗi phổ biến nhất."
+  },
+  {
+    "id": 69,
+    "question": "Khu vực spandrel được thiết kế và cách nhiệt như thế nào để đáp ứng yêu cầu nhiệt của EBES?",
+    "answer": "Khu vực spandrel được cách nhiệt bằng tấm nhôm có lớp cách nhiệt và màng chống ẩm để giảm thất thoát nhiệt."
+  },
+  {
+    "id": 70,
+    "question": "Các bước kiểm tra được khuyến nghị trong quá trình lắp đặt mặt dựng để đảm bảo tuân thủ tiêu chuẩn là gì?",
+    "answer": "Kiểm tra độ thẳng khung, mối nối, neo giữ và đối chiếu với bản vẽ đã phê duyệt."
+  },
+  {
+    "id": 71,
+    "question": "Vật liệu cần được ghi nhãn và bảo quản như thế nào để tránh nhiễm bẩn hoặc hư hại trước khi lắp đặt?",
+    "answer": "Bảo quản trong khu vực khô ráo, có mái che, ngăn cách bằng tấm lót không gây ố và ghi nhãn rõ ràng."
+  },
+  {
+    "id": 72,
+    "question": "Thời hạn và phạm vi bảo hành thường được yêu cầu trong EBES đối với hiệu suất hệ mặt dựng là gì?",
+    "answer": "EBES yêu cầu bảo hành bao gồm vật liệu, tay nghề thi công và khả năng đáp ứng yêu cầu thiết kế trong thời hạn quy định."
+  },
+  {
+    "id": 73,
+    "question": "Các lớp phủ nhôm được kiểm tra độ đồng nhất màu và khả năng giữ độ bóng như thế nào theo hướng dẫn của AAMA?",
+    "answer": "Kiểm tra được thực hiện theo AAMA 2605 để đảm bảo độ sai lệch màu và độ bóng ở mức tối thiểu theo thời gian."
+  },
+  {
+    "id": 74,
+    "question": "Những yếu tố thiết kế nào cần xem xét khi kết nối hệ tường kính EBES với các bộ phận liền kề của công trình?",
+    "answer": "Các mối nối phải cho phép giãn nở nhiệt, thoát nước và vẫn đảm bảo độ kín khí và chống thấm."
+  },
+  {
+    "id": 75,
+    "question": "Các nhóm dự án tham chiếu các công trình mặt dựng lân cận hoặc mới hoàn thành như thế nào để xác minh giải pháp kỹ thuật?",
+    "answer": "Dữ liệu hiệu suất và kết quả thử nghiệm mẫu từ các dự án tương tự hoặc lân cận được tham chiếu để xác minh"
+  },
+  {
+    "id": 76,
+    "question": "Những biện pháp phòng ngừa nào có thể áp dụng để tránh rò rỉ nước và cầu nhiệt trong hệ mặt dựng?",
+    "answer": "Sử dụng lớp chắn khí liên tục, bố trí đường thoát nước hợp lý và hệ khung có ngắt nhiệt để tránh rò rỉ nước và cầu nhiệt."
+  },
+  {
+    "id": 77,
+    "question": "Hệ thống EBES quy định vật liệu nào cho cốt thép, neo và kẹp?",
+    "answer": "Cốt thép, neo, chốt, móc, góc và kẹp phải tuân theo ASTM A167, loại 304, hoàn thiện bề mặt AISI No. 2B."
+  },
+  {
+    "id": 78,
+    "question": "Yêu cầu về vật liệu và độ dày cho shadow box và tấm chắn khí sau tấm nhôm là gì?",
+    "answer": "Phải sử dụng thép tấm theo ASTM A653/A653M, dày 1,2 mm, mạ kẽm Z275, có mối hàn và góc hàn liên tục"
+  },
+  {
+    "id": 79,
+    "question": "Tiêu chuẩn ASTM nào quy định việc sử dụng thép mạ kẽm trong EBES?",
+    "answer": "Thép mạ kẽm phải tuân theo ASTM A653/A653M với lớp mạ Z275."
+  },
+  {
+    "id": 80,
+    "question": "Yêu cầu hoàn thiện bề mặt cho nhôm định hình và tấm nhôm là gì?",
+    "answer": "Hoàn thiện bề mặt phải tuân theo AAMA 2605, áp dụng lớp phủ hữu cơ cao cấp cho thanh nhôm định hình và tấm nhôm."
+  },
+  {
+    "id": 81,
+    "question": "Những thử nghiệm nào đảm bảo hiệu suất khí, nước và kết cấu của hệ tường kính?",
+    "answer": "Hệ thống phải tuân theo ASTM E283 (rò rỉ không khí), ASTM E330 (chịu tải gió), và ASTM E331 (chống thấm nước)."
+  },
+  {
+    "id": 82,
+    "question": "Quy trình bảo trì và vệ sinh được khuyến nghị cho nhôm và kính là gì?",
+    "answer": "Thực hiện theo hướng dẫn AAMA CW-10 về bảo quản và xử lý nhôm kiến trúc từ xưởng đến công trình."
+  },
+  {
+    "id": 83,
+    "question": "Biện pháp bảo vệ chống ăn mòn nào được áp dụng cho các chi tiết thép bên ngoài?",
+    "answer": "Các chi tiết thép lộ thiên bên ngoài phải sử dụng thép không gỉ loại 316 để chống ăn mòn."
+  },
+  {
+    "id": 84,
+    "question": "Theo AAMA 2605, yêu cầu hoàn thiện đối với lớp phủ nhôm là gì?",
+    "answer": "Lớp phủ phải đạt tiêu chuẩn cao về giữ màu, độ bóng và khả năng chịu thời tiết."
+  },
+  {
+    "id": 85,
+    "question": "Những lưu ý chung khi xử lý các chi tiết nhôm là gì?",
+    "answer": "Thực hiện theo AAMA CW-10 để tránh làm hư hại hoặc nhiễm bẩn bề mặt."
+  },
+  {
+    "id": 86,
+    "question": "Tiêu chuẩn ASTM E330 về kiểm tra tải trọng kết cấu ảnh hưởng như thế nào đến việc xác định kích thước thanh đứng nhôm và chi tiết liên kết?",
+    "answer": "Tiêu chuẩn ASTM E330 (hiệu suất kết cấu dưới tải gió) được yêu cầu để thử nghiệm và do đó xác định các mức tải gió và độ võng mà các thanh đứng (mullion) và liên kết của tường kính phải chịu được. \nEBES cũng quy định các giới hạn độ võng (ví dụ: thanh đứng ngang ≤ L/175 và tối đa 10 mm, thanh đứng dọc ≤ L/500 dưới tải gió thiết kế dương) và các giới hạn kết cấu khác. \nDo đó, việc xác định kích thước thanh đứng và chi tiết liên kết phải đảm bảo chịu được các mức tải được chứng minh bởi thử nghiệm ASTM E330 và đồng thời đáp ứng các tiêu chí độ võng của EBES. \nCác bản vẽ thi công, tính toán kết cấu có đóng dấu của Kỹ sư chuyên nghiệp tại Ontario và kết quả thử nghiệm/phòng thí nghiệm phải được nộp để xác nhận rằng các kích thước thanh đứng và chi tiết liên kết đã chọn đáp ứng hiệu suất theo ASTM E330 và giới hạn độ võng của EBES."
+  },
+  {
+    "id": 87,
+    "question": "Trong thực tế triển khai, thách thức phối hợp chính giữa hệ EBES và hệ MEP là gì – đặc biệt với các chi tiết xuyên tường, giá đỡ chiếu sáng hoặc bộ phận sưởi tan băng?",
+    "answer": "Spec bắt buộc bu-lông/vít ngoài trời theo ASTM F738M – Stainless Steel Type 316 và tất cả thép lộ thiên ngoài lớp cản hơi phải là 316. Yêu cầu này nhằm đảm bảo chống ăn mòn và độ bền lâu dài cho các liên kết ngoài trời — do đó dùng thép không gỉ 316 thay cho vật liệu nhôm cho các liên kết cấu trúc lộ thiên."
+  },
+  {
+    "id": 88,
+    "question": "Ở góc độ kiểm soát chất lượng, làm thế nào để đảm bảo độ đồng nhất bề mặt giữa các tấm nhôm anod hoặc sơn phủ trong quá trình gia công và lắp đặt theo AAMA 2605?",
+    "answer": "Để đảm bảo đồng nhất bề mặt theo AAMA 2605, spec yêu cầu các lớp phủ cùng loại phải được phủ trong một dây chuyền/sản xuất chung để đảm bảo trùng màu; nộp mẫu nhôm/tấm, mô hình mock-up để kiểm tra chất lượng hoàn thiện. Đồng thời yêu cầu bảo hành lớp phủ theo AAMA 2605 (độ phai <5 đơn vị, chỉ số phấn ≤8, giữ >30% độ bóng). Những biện pháp này (phủ cùng đợt, mẫu, mock-up, bảo hành) là cơ chế QC trong tài liệu."
+  },
+  {
+    "id": 89,
+    "question": "So với tiêu chuẩn mặt dựng châu Âu (ví dụ EN 13830), dung sai độ cong và độ phẳng tấm nhôm (0.1%) được quy định ở đây có đáp ứng hoặc vượt tiêu chuẩn quốc tế không?",
+    "answer": "Quy định trong tài liệu nêu rõ độ cong tối đa cho phép của tấm là 0,1% kích thước và chiều dài, phù hợp với tiêu chuẩn mặt dựng chính xác cao, đáp ứng hoặc vượt ngưỡng dung sai quốc tế phổ biến cho hệ ốp nhôm."
+  },
+  {
+    "id": 90,
+    "question": "Đối với hộp cách nhiệt (shadow box) và tấm mặt che nhôm (spandrel panel), yêu cầu kỹ thuật cụ thể về tính liên tục của lớp cách nhiệt, việc bịt kín và ngăn ăn mòn điện hóa giữa các kim loại khác nhau là gì?",
+    "answer": "Lớp cách nhiệt phải được đặt liên tục phía sau tấm chắn khí, không được hở khe. Các tấm kim loại khác loại phải được tách bằng spacer, và toàn bộ các mối nối phải được trám kín bằng keo silicone để đảm bảo chống thấm và duy trì cách nhiệt liên tục."
+  },
+  {
+    "id": 91,
+    "question": "Quy trình lắp đặt nào được khuyến nghị để đảm bảo độ võng của kết cấu chính không truyền tải trọng sang hệ vách kính?",
+    "answer": "Cần chừa khoảng co giãn để độ võng kết cấu không truyền tải trọng sang hệ vách kính. Các cụm chuyển tiếp và hệ neo phải được lắp đặt sao cho hấp thụ được chuyển vị nhưng vẫn giữ kín khí và kín nước."
+  },
+  {
+    "id": 92,
+    "question": "Dựa trên các dự án mặt dựng cao tầng tương tự tại Toronto hoặc tiêu chuẩn quốc tế, những thực hành tốt nhất để tích hợp cửa xoay tự động với ốp thép không gỉ vào hệ EBES mà không lộ vít là gì?",
+    "answer": "Cửa xoay tự động được quy định là loại tự động 4 cánh, kiểu hẹp, toàn bộ phần ốp trần, diềm và viền được bọc thép không gỉ. Các chi tiết phải đánh bóng hoặc chải xước đồng nhất, không được để lộ vít hoặc mối ghép, đảm bảo tính thẩm mỹ và liền khối của mặt dựng."
+  },
+  {
+    "id": 93,
+    "question": "Đối với má phanh 1450 mm² hoạt động trong bể dầu, có tiêu chuẩn kiểm định hoặc thử nghiệm thực tế nào cần tham chiếu?",
+    "answer": "Cửa phải có hệ thống phanh với diện tích má phanh tối thiểu 1450 mm² hoạt động trong bể dầu. Tỷ lệ hành trình má phanh so với hành trình cánh xoay tối thiểu là 100:1. Tốc độ quay tối thiểu: 12 vòng/phút."
+  },
+  {
+    "id": 94,
+    "question": "Elox Champagne (brushed) và Elox Light Umber (brushed), lớp anod hóa này có độ bền màu và chống ăn mòn tương đương với tiêu chuẩn AAMA 611 hay không?",
+    "answer": "MET-1: Elox Champagne (đánh xước). MET-2: Elox Light Umber (đánh xước)"
+  },
+  {
+    "id": 95,
+    "question": "Khi thi công tại môi trường lạnh như Toronto, gioăng chống thời tiết toàn chu vi cần được kiểm tra theo tiêu chí nào?",
+    "answer": "Cung cấp gioăng chống thời tiết toàn chu vi"
+  },
+  {
+    "id": 96,
+    "question": "Với hệ stone cladding có dung sai ±3 mm, liệu có cần joint filler hoặc keo đàn hồi giữa các viên để bù sai số trong điều kiện giãn nở nhiệt không?",
+    "answer": "Chiều dài ±3 mm; chiều cao ±3 mm; độ lệch vuông góc ±3 mm; độ dày ±2 mm."
+  },
+  {
+    "id": 97,
+    "question": "Trong quy trình làm sạch bề mặt tiếp xúc bằng dung môi, loại dung môi nào được khuyến nghị cho nhôm anod hóa để tránh ảnh hưởng đến lớp bảo vệ?",
+    "answer": "Làm sạch bề mặt tiếp xúc bằng dung môi và lau khô."
+  },
+  {
+    "id": 98,
+    "question": "Khi lắp đặt hệ thống EBES theo yêu cầu của GANA (Glass Association of North America), cần chứng minh tuân thủ bằng báo cáo thử nghiệm hiện trường (field test) nào?",
+    "answer": "Lắp đặt hệ thống EBES theo bản vẽ đã duyệt, hướng dẫn của nhà sản xuất và các yêu cầu của GANA"
+  },
+  {
+    "id": 99,
+    "question": "Quy định xây dựng tại Việt Nam hoặc Singapore khác gì so với tiêu chuẩn CSA W59 về yêu cầu hàn cho hệ khung thép chịu lực?",
+    "answer": "Tiêu chuẩn EBES viện dẫn CSA W59, quy định hàn kết cấu thép với yêu cầu chặt chẽ về chất lượng, kiểm tra và sai số biến dạng.\nTại Việt Nam, các tiêu chuẩn tương đương như TCVN 5637:1991 và TCVN 197:2002 có quy định tương tự về quy trình hàn, nhưng thường cho phép sai số kiểm tra thủ công cao hơn một chút.\nỞ Singapore, hàn thường tuân theo SS EN ISO 3834 hoặc SS EN 1090, yêu cầu nghiêm ngặt hơn về hồ sơ kiểm soát chất lượng và chứng nhận của bên thứ ba.\nDo đó, khác biệt chủ yếu nằm ở mức độ kiểm định, yêu cầu chứng chỉ và tài liệu giám sát chất lượng, chứ không phải kỹ thuật hàn cốt lõi."
+  },
+  {
+    "id": 100,
+    "question": "Những nguyên nhân thường gây hỏng hệ neo giữ tấm ốp khi chịu tải động đất là gì và giải pháp thiết kế phòng ngừa nào được khuyến nghị?",
+    "answer": "Theo yêu cầu của phần EBES, các thiết bị neo phải cho phép điều chỉnh chính xác và khóa cố định chắc chắn, đồng thời không truyền mô men lên kết cấu chính.\nNguyên nhân gây hỏng hệ neo khi chịu tải động đất thường gồm: Thiếu khả năng chuyển vị hoặc giãn nở cần thiết, khóa neo không chặt hoặc sai vị trí, vật liệu neo giòn, bị ăn mòn, không có lớp cách ly giữa vật liệu khác loại.\nGiải pháp thiết kế phòng ngừa gồm: Sử dụng hệ neo có khả năng điều chỉnh và chịu tải động, phủ lớp cách ly 0,8 mm chống ăn mòn điện hóa, thiết kế khe giãn nở và liên kết mềm để hấp thụ dao động mà không làm mất ổn định kết cấu."
+  },
+  {
+    "id": 101,
+    "question": "Trong công tác bảo trì mặt dựng, tần suất kiểm tra hoặc thay thế keo trám quanh các khe hở và mối nối nên là bao lâu để đảm bảo kín nước, kín khí?",
+    "answer": "Phần EBES yêu cầu keo trám phải thi công theo ASTM C1193 và hướng dẫn của nhà sản xuất để đảm bảo kín khí, kín nước.\nThông lệ kỹ thuật phù hợp với tiêu chuẩn này khuyến nghị kiểm tra định kỳ 3 - 5 năm một lần và thay mới sau 7 - 10 năm đối với khu vực chịu thời tiết khắc nghiệt.\nCác dấu hiệu cần thay thế gồm nứt, bong keo, đổi màu hoặc thấm nước qua mối nối."
+  },
+  {
+    "id": 102,
+    "question": "Thiết kế hệ thống EBES yêu cầu sự phối hợp của những bên nào?",
+    "answer": "Theo mục 1.2 – Yêu cầu hỗ trợ thiết kế (Design Assist Requirements), quy trình thiết kế EBES yêu cầu sự hợp tác giữa Tư vấn thiết kế (Consultant), Chủ đầu tư (Owner) và Nhà thầu EBES (EBES Contractor) nhằm phát triển thiết kế cuối cùng đáp ứng yêu cầu của dự án."
+  },
+  {
+    "id": 103,
+    "question": "Tiêu chuẩn nào được sử dụng để kiểm tra khả năng chịu lực của hệ thống tường kính và cửa ngoài?",
+    "answer": "Tiêu chuẩn ASTM E330 - Standard Test Method for Structural Performance of Exterior Windows, Doors, Skylights and Curtain Walls by Uniform Static Air Pressure Difference được sử dụng để kiểm tra khả năng chịu tải kết cấu của hệ thống."
+  },
+  {
+    "id": 104,
+    "question": "Tiêu chuẩn nào áp dụng để thử nghiệm khả năng chống cháy bề mặt vật liệu dùng trong hệ thống EBES?",
+    "answer": "Tiêu chuẩn ASTM E84 - Standard Test Method for Surface Burning Characteristics of Building Materials là tiêu chuẩn áp dụng để kiểm tra đặc tính cháy trên bề mặt các vật liệu trong hệ thống EBES."
+  },
+  {
+    "id": 105,
+    "question": "Đối với nhôm ép đùn và tấm nhôm dùng trong EBES, lớp phủ hữu cơ cần tuân theo tiêu chuẩn nào?",
+    "answer": "Lớp phủ hữu cơ trên nhôm ép đùn và tấm nhôm cần đáp ứng tiêu chuẩn AAMA 2605, Voluntary Specification, Performance Requirements and Test Procedures for Superior Performing Organic Coatings on Aluminum Extrusions and Panels."
+  },
+  {
+    "id": 106,
+    "question": "Kỹ sư thiết kế kết cấu cho hệ thống EBES phải đáp ứng yêu cầu gì?",
+    "answer": "Kỹ sư chịu trách nhiệm thiết kế kết cấu và vận hành hệ thống EBES phải là Kỹ sư chuyên nghiệp được cấp phép hành nghề tại tỉnh Ontario, theo đúng yêu cầu trong mục 1.2.4 và phải trở thành kỹ sư chịu trách nhiệm pháp lý (engineer of record) cho công việc này."
+  },
+  {
+    "id": 107,
+    "question": "Thiết kế EBES phải đáp ứng những tiêu chuẩn thử nghiệm nào liên quan đến truyền nhiệt và năng lượng?",
+    "answer": "Thiết kế EBES phải tuân thủ các tiêu chuẩn NFRC 100 (xác định hệ số truyền nhiệt-   U - factor) và NFRC 200 (xác định hệ số thu nhiệt mặt trời - SHGC và độ truyền sáng), đồng thời hiệu suất nhiệt của hệ thống kính phải được mô phỏng qua phần mềm THERM 6 của Lawrence Berkeley Laboratory kết hợp với mô phỏng 3D."
+  },
+  {
+    "id": 108,
+    "question": "Điều kiện nhiệt độ và độ ẩm nào được dùng để kiểm soát việc ngưng tụ trong thiết kế EBES?",
+    "answer": "Việc ngăn ngừa ngưng tụ trên mặt trong hệ EBES được kiểm soát theo các điều kiện: \nMùa hè: Nhiệt độ trong nhà 22°C, độ ẩm 50 - 55%. \nMùa đông: Nhiệt độ trong nhà 21°C, độ ẩm 30%.\nNhiệt độ ngoài trời: - 20°C vào mùa đông và 30°C (khô), 23°C (ướt) vào mùa hè."
+  },
+  {
+    "id": 109,
+    "question": "Trong thiết kế EBES, cần kiểm soát không khí thâm nhập qua tường kính như thế nào?",
+    "answer": "Theo ASTM E283, không khí xâm nhập qua hệ tường kính (curtain wall) không được vượt quá 0.1 L/s·m²\nQua cửa sổ mở là 0.5 L/s·m² \nQua tường đặc là 0.1 L/s·m² ở mức chênh lệch áp suất 750 Pa. \nRiêng đối với cửa trượt, mức tối đa là 1.5 L/s·m²\nCửa nén kín là 0.5 L/s·m² tại áp suất 300 Pa"
+  },
+  {
+    "id": 110,
+    "question": "Yêu cầu thiết kế đối với lan can và vách chắn gió là gì?",
+    "answer": "Theo mục .16, lan can kính (glazed guards) và vách chắn gió (wind screens) phải được thiết kế để chịu được tải trọng lan can và tay vịn theo Bộ luật Xây dựng Ontario (OBC), bao gồm Tiêu chuẩn bổ sung SB - 13, các tải trọng gió trong báo cáo khảo sát gió và các quy định địa phương liên quan."
+  },
+  {
+    "id": 111,
+    "question": "Lực va đập ngang yêu cầu đối với lan can và parapet là bao nhiêu?",
+    "answer": "Theo mục .17, hệ lan can và tường chắn mái (parapet) phải chịu được lực va đập 410 kg theo phương ngang tác dụng lên thanh ngang trên cùng. Lực này không bao gồm hệ số an toàn tối thiểu 2 trừ khi có yêu cầu lớn hơn theo thiết kế."
+  },
+  {
+    "id": 112,
+    "question": "Xác suất vỡ yêu cầu trong thiết kế kính là bao nhiêu?",
+    "answer": "Theo mục .18.1, kính phải được thiết kế với xác suất vỡ là 5 tấm trên mỗi 1000 tấm tại lần chịu tải thiết kế đầu tiên."
+  },
+  {
+    "id": 113,
+    "question": "Giới hạn ứng suất của mối nối silicone trong kính kết cấu là bao nhiêu?",
+    "answer": "Theo mục .18.5.1, ứng suất tối đa trong mối nối silicone không được vượt quá 138 kPa (20 psi) khi chịu kéo hoặc cắt trong thời gian ngắn. Với tải lâu dài do trọng lượng kính, ứng suất cắt không được vượt quá 7 kPa (1 psi) hoặc thấp hơn nếu nhà sản xuất keo quy định."
+  },
+  {
+    "id": 114,
+    "question": "Yêu cầu đối với hệ thống che nắng ngang là gì?",
+    "answer": "Theo mục .23, hệ thống che nắng ngang gồm nắp đỉnh nhôm kéo dài hoặc hệ che nắng độc lập phải chịu được tải trọng trọng lực, gió và phải tích hợp hệ hỗ trợ cho thiết bị lau kính."
+  },
+  {
+    "id": 115,
+    "question": "Cửa chớp nhôm (louvres) trong hệ EBES phải đáp ứng tiêu chuẩn thông thoáng nào?",
+    "answer": "Theo mục .29.2, cửa chớp nhôm phải có diện tích thông thoáng tự do là 45%."
+  },
+  {
+    "id": 116,
+    "question": "Điều kiện và yêu cầu với các đơn vị kính cách nhiệt (IGU) là gì?",
+    "answer": "Nhà sản xuất IGU phải là thành viên đã được chứng nhận của IGMA.\nPhải tham gia chương trình kiểm toán tuân thủ và vượt qua kiểm tra trong vòng 6 tháng gần đây. Cần xác nhận rằng tất cả kích thước kính yêu cầu có thể sản xuất được mà không hư hỏng hoặc nứt vỡ."
+  },
+  {
+    "id": 117,
+    "question": "Yêu cầu cho mô hình mẫu nhỏ (tabletop mock-up) của hệ thống EBES bao gồm những gì?",
+    "answer": "Phải cung cấp ít nhất một mô hình tỉ lệ 1:1, kích thước 610 x 610 mm cho từng loại kính và tấm ốp. Mẫu phải thể hiện đầy đủ: Loại vật liệu, bề mặt hoàn thiện, chất lượng gia công. Các chi tiết như khung, mối nối, kích thước và màu sắc của keo hay ron. Mẫu phục vụ cho chủ đầu tư và tư vấn xem xét trước khi sản xuất hàng loạt."
+  },
+  {
+    "id": 118,
+    "question": "Cho tôi vật liệu cho gioăng ngăn khí/lớp chống ẩm và các yêu cầu kỹ thuật?",
+    "answer": "Theo tài liệu, gioăng ngăn khí và lớp chống ẩm được đề cập ở mục 2.3 – Air Barrier & Vapour Retarder. Chi tiết như sau:\nVật liệu cho gioăng/lớp chống ẩm.  \nMàng ngăn hơi ẩm dạng tấm hoặc phun, gồm màng PE có độ bền cao hoặc cao su tổng hợp.\nYêu cầu kỹ thuật:\nĐộ kín khí và chống thấm đạt yêu cầu ASTM E283.\nTương thích với lớp cản khí của các cấu kiện lân cận. \nKhả năng chịu biến thiên nhiệt tới ±40°C và thiết kế chênh lệch nhiệt độ phục vụ lên đến 85°C mà không bị nứt tách hoặc cong vênh. \nLiên kết liên tục, không gián đoạn tại các mối nối, khe hở hoặc chỗ xuyên tường."
+  },
+  {
+    "id": 119,
+    "question": "Cho tôi vật liệu cho gioăng chống nước trong hệ thống rainscreen và các yêu cầu kỹ thuật ?",
+    "answer": "Vật liệu gioăng chống nước: Cao su EPDM hoặc silicone bền thời tiết.\nYêu cầu kỹ thuật: \nNgăn chặn nước mưa thấm vào khoang hệ thống khi thử nghiệm theo ASTM E331. Có đường thoát nước trực tiếp ra ngoài, tuân theo nguyên tắc rain screen. \nPhải phối hợp với các chi tiết đùn, nẹp, và tấm ốp để đảm bảo hệ thống EBES kín nước trong áp suất thử 750 Pa."
+  },
+  {
+    "id": 120,
+    "question": "Vật liệu cho thanh đỡ kính (mullion) và các yêu cầu kỹ thuật của thanh đỡ?",
+    "answer": "Vật liệu thanh đỡ (mullion): Hợp kim nhôm hoặc thép, thiết kế theo CAN/CSA-S157-M (nhôm) hoặc CSA S16/S136 (thép).\nYêu cầu kỹ thuật: \nChịu được tải trọng gió, tự trọng, chuyển vị kết cấu mà không biến dạng vượt giới hạn. \nCó thể lắp gioăng bịt khói và không khí. \nKhoảng cách chia khoang phù hợp với chiều cao một tầng.\nKích thước không được tăng chỉ vì bổ sung gia cường."
+  },
+  {
+    "id": 121,
+    "question": "Vật liệu cho bộ neo (anchor) và các yêu cầu kỹ thuật của neo lắp đặt cho EBES?",
+    "answer": "Vật liệu bộ neo: Thép mạ kẽm nhúng nóng hoặc thép không gỉ\nYêu cầu kỹ thuật: \nĐáp ứng chuyển vị kết cấu, dung sai thi công ≥ 25 mm theo 3 phương.\nChịu được tải trọng tập trung ≥ 1.0 kN theo phương ngang hoặc đứng. \nPhù hợp với chi tiết chôn sẵn trong kết cấu. \nKhông truyền lực cắt qua lớp cách nhiệt."
+  },
+  {
+    "id": 122,
+    "question": "Vật liệu cho kính vách (glazing) trong hệ curtain wall và yêu cầu hiệu suất?",
+    "answer": "Vật liệu kính curtain wall: Kính Low-E hai hoặc ba lớp, có khí trơ.\nYêu cầu kỹ thuật: \nĐáp ứng chỉ tiêu hiệu suất:\nU-value mùa đông: 0.30 \nU-value mùa hè: 0.27 VLT: 35%\nSHGC: 0.27\nKhả năng chịu ứng suất nhiệt mà không nứt vỡ\nKhông gây rung hoặc tạo tiếng ồn do gió."
+  }
+]

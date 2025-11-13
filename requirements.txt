@@ -3,3 +3,5 @@ Flask-CORS==4.0.0
 google-genai>=1.49.0
 python-dotenv==1.0.0
 gunicorn==21.2.0
+pandas>=2.0.0
+openpyxl>=3.1.0

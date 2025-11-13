@@ -1,0 +1,12 @@
+# Original requirements
+Flask==3.0.0
+Flask-CORS==4.0.0
+google-genai>=1.49.0
+python-dotenv==1.0.0
+gunicorn==21.2.0
+
+# LangGraph requirements
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-google-genai>=2.0.0
+langchain-community>=0.3.0

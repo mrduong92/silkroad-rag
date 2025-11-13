@@ -30,7 +30,7 @@ class Config:
     # Chatbot Configuration
     MAX_HISTORY_LENGTH = 10
     TEMPERATURE = 0.1  # Very low for focused, deterministic responses
-    MAX_OUTPUT_TOKENS = 500  # Limit response length to keep answers concise
+    MAX_OUTPUT_TOKENS = 2000  # Allow longer responses while examples guide conciseness
 
     @staticmethod
     def validate():
