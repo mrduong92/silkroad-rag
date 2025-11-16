@@ -72,31 +72,44 @@ def send_message_to_user(user_id, message):
         Tuple of (status_code, response_text)
     """
     url = "https://openapi.zalo.me/v3.0/oa/message/cs"
+
+    # Log user_id type and value for debugging
+    logger.info(f"[DEBUG] user_id type: {type(user_id)}, value: {user_id}")
+
+    # Convert user_id to string if it's not already
+    user_id_str = str(user_id)
+    logger.info(f"[DEBUG] user_id_str after conversion: {user_id_str}")
+
     headers = {
         "Content-Type": "application/json",
         "access_token": get_access_token()
     }
     payload = {
-        "recipient": {"user_id": user_id},
+        "recipient": {"user_id": user_id_str},
         "message": {"text": message}
     }
 
+    # Log full payload for debugging
+    logger.info(f"[DEBUG] Zalo API Payload: {json.dumps(payload, ensure_ascii=False)}")
+    logger.info(f"[DEBUG] Access token length: {len(headers['access_token'])}")
+
     try:
         response = requests.post(url, headers=headers, json=payload)
-        logger.info(f"Sent message to user {user_id}: {response.status_code}")
-        logger.info(f"Zalo API Response: {response.text}")
+        logger.info(f"Sent message to user {user_id_str}: {response.status_code}")
+        logger.info(f"[DEBUG] Zalo API Response: {response.text}")
 
         # Check if response has error
         try:
             response_data = response.json()
-            if response_data.get('error') or response_data.get('error_code'):
+            if response_data.get('error') != 0:
                 logger.error(f"Zalo API Error: {response_data}")
+                logger.error(f"[DEBUG] Failed payload was: {json.dumps(payload, ensure_ascii=False)}")
         except:
             pass
 
         return response.status_code, response.text
     except Exception as e:
-        logger.error(f"Error sending message to user {user_id}: {e}", exc_info=True)
+        logger.error(f"Error sending message to user {user_id_str}: {e}", exc_info=True)
         return 500, str(e)
 
 
@@ -306,17 +319,37 @@ def zalo_webhook():
     """
     # return jsonify({"status": "success", "message": "Webhook received"}), 200 # useful for testing
     data = request.json
-    logger.info(f"Received webhook data: {data}")
+    logger.info(f"[DEBUG] ===== WEBHOOK RECEIVED =====")
+    logger.info(f"[DEBUG] Full webhook data: {json.dumps(data, ensure_ascii=False, indent=2)}")
 
     # Handle user text message
     if data.get("event_name") == "user_send_text":
-        user_id = data.get("sender", {}).get("id")
+        sender_data = data.get("sender", {})
+        sender_id = sender_data.get("id")
+
+        # IMPORTANT: Use user_id_by_app for sending messages (not sender.id)
+        user_id_by_app = data.get("user_id_by_app")
+
+        logger.info(f"[DEBUG] Event: user_send_text")
+        logger.info(f"[DEBUG] Sender data: {sender_data}")
+        logger.info(f"[DEBUG] sender.id: {sender_id} (type: {type(sender_id)})")
+        logger.info(f"[DEBUG] user_id_by_app: {user_id_by_app} (type: {type(user_id_by_app)})")
+
+        # Use user_id_by_app if available, fallback to sender.id
+        user_id = user_id_by_app if user_id_by_app else sender_id
+
         if not user_id:
             logger.error("User ID not found in webhook data")
+            logger.error(f"[DEBUG] sender dict was: {sender_data}")
+            logger.error(f"[DEBUG] user_id_by_app was: {user_id_by_app}")
             return jsonify({"error": "User ID not found"}), 400
+
+        logger.info(f"[DEBUG] Using user_id for reply: {user_id}")
 
         # Get user's message
         user_message = data.get("message", {}).get("text", "")
+        logger.info(f"[DEBUG] User message: {user_message}")
+
         if not user_message:
             logger.warning(f"Empty message from user {user_id}")
             return jsonify({"status": "success", "message": "Empty message ignored"}), 200
@@ -328,7 +361,19 @@ def zalo_webhook():
 
     # Handle follow event (optional - send welcome message)
     elif data.get("event_name") == "follow":
-        user_id = data.get("follower", {}).get("id")
+        follower_data = data.get("follower", {})
+        follower_id = follower_data.get("id")
+
+        # Use user_id_by_app if available
+        user_id_by_app = data.get("user_id_by_app")
+        user_id = user_id_by_app if user_id_by_app else follower_id
+
+        logger.info(f"[DEBUG] Event: follow")
+        logger.info(f"[DEBUG] Follower data: {follower_data}")
+        logger.info(f"[DEBUG] follower.id: {follower_id} (type: {type(follower_id)})")
+        logger.info(f"[DEBUG] user_id_by_app: {user_id_by_app} (type: {type(user_id_by_app)})")
+        logger.info(f"[DEBUG] Using user_id for welcome: {user_id}")
+
         if user_id:
             welcome_message = (
                 "Xin chào! Tôi là trợ lý ảo của Silkroad Hà Nội. "
@@ -340,6 +385,7 @@ def zalo_webhook():
         return jsonify({"status": "success", "message": "Welcome message sent"}), 200
 
     # Other events - just acknowledge
+    logger.info(f"[DEBUG] Unhandled event: {data.get('event_name')}")
     return jsonify({"status": "success", "message": "Webhook received"}), 200
 
 
