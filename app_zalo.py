@@ -37,6 +37,10 @@ except Exception as e:
 # In-memory storage for chat sessions
 chat_sessions = {}
 
+# Message deduplication - store processed message IDs
+processed_messages = set()
+MAX_PROCESSED_MESSAGES = 1000  # Limit memory usage
+
 # Zalo Configuration
 TOKEN_FILE = "tokens.json"
 
@@ -214,9 +218,28 @@ Rules:
         )
 
         # Extract response text
+        logger.info(f"[DEBUG] Gemini response candidates: {len(response.candidates) if response.candidates else 0}")
+
         if response.candidates and len(response.candidates) > 0:
             candidate = response.candidates[0]
-            answer_text = candidate.content.parts[0].text if candidate.content.parts else "No response generated"
+
+            logger.info(f"[DEBUG] Candidate content parts: {len(candidate.content.parts) if candidate.content and candidate.content.parts else 0}")
+
+            # Check if we have valid content
+            if not candidate.content or not candidate.content.parts:
+                logger.error("[DEBUG] No content parts in candidate response")
+                logger.error(f"[DEBUG] Candidate: {candidate}")
+                return {
+                    'answer': 'Xin lỗi, tôi không thể tạo câu trả lời. Vui lòng thử lại hoặc đặt câu hỏi khác.',
+                    'error': 'No content parts in response',
+                    'success': False
+                }
+
+            answer_text = candidate.content.parts[0].text
+
+            # Log the response
+            logger.info(f"[DEBUG] Generated answer length: {len(answer_text)} chars")
+            logger.info(f"[DEBUG] Answer preview: {answer_text[:100]}...")
 
             # Extract grounding metadata (citations)
             citations = []
@@ -236,8 +259,11 @@ Rules:
                 'success': True
             }
         else:
+            logger.error("[DEBUG] No candidates in Gemini response")
+            logger.error(f"[DEBUG] Full response: {response}")
             return {
-                'error': 'No response generated from Gemini',
+                'answer': 'Xin lỗi, tôi không thể tìm thấy thông tin liên quan trong tài liệu. Vui lòng thử đặt câu hỏi khác.',
+                'error': 'No candidates in Gemini response',
                 'success': False
             }
 
@@ -324,6 +350,14 @@ def zalo_webhook():
 
     # Handle user text message
     if data.get("event_name") == "user_send_text":
+        # Get message ID for deduplication
+        msg_id = data.get("message", {}).get("msg_id")
+
+        # Deduplicate: Skip if already processed
+        if msg_id and msg_id in processed_messages:
+            logger.warning(f"[DEDUP] Message {msg_id} already processed, skipping")
+            return jsonify({"status": "success", "message": "Duplicate message ignored"}), 200
+
         sender_data = data.get("sender", {})
         sender_id = sender_data.get("id")
 
@@ -331,6 +365,7 @@ def zalo_webhook():
         user_id_by_app = data.get("user_id_by_app")
 
         logger.info(f"[DEBUG] Event: user_send_text")
+        logger.info(f"[DEBUG] msg_id: {msg_id}")
         logger.info(f"[DEBUG] Sender data: {sender_data}")
         logger.info(f"[DEBUG] sender.id: {sender_id} (type: {type(sender_id)})")
         logger.info(f"[DEBUG] user_id_by_app: {user_id_by_app} (type: {type(user_id_by_app)})")
@@ -353,6 +388,14 @@ def zalo_webhook():
         if not user_message:
             logger.warning(f"Empty message from user {user_id}")
             return jsonify({"status": "success", "message": "Empty message ignored"}), 200
+
+        # Add to processed messages for deduplication
+        if msg_id:
+            processed_messages.add(msg_id)
+            # Limit memory: remove oldest if too many
+            if len(processed_messages) > MAX_PROCESSED_MESSAGES:
+                processed_messages.pop()
+            logger.info(f"[DEDUP] Added msg_id {msg_id} to processed set (total: {len(processed_messages)})")
 
         # Process the question with Gemini RAG chatbot
         handle_user_question(user_id, user_message)
