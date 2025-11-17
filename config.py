@@ -29,8 +29,11 @@ class Config:
 
     # Chatbot Configuration
     MAX_HISTORY_LENGTH = 10
-    TEMPERATURE = 0.1  # Very low for focused, deterministic responses
-    MAX_OUTPUT_TOKENS = 500  # Encourage concise answers (not too low to avoid truncation)
+    TEMPERATURE = 0.0  # Fully deterministic responses (0.0 = no randomness)
+    MAX_OUTPUT_TOKENS = 1500  # Allow complete answers while staying concise
+
+    # Zalo Message Limits
+    ZALO_MAX_MESSAGE_LENGTH = 2000  # Conservative limit for Zalo OA messages (chars)
 
     @staticmethod
     def validate():
