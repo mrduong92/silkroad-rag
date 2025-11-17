@@ -12,6 +12,7 @@ import uuid
 import json
 import logging
 import requests
+import time
 from datetime import datetime
 from config import Config
 
@@ -244,23 +245,51 @@ You are a professional AI assistant answering questions based on technical docum
         logger.info(f"[BUG3] Full prompt length: {len(full_prompt)} chars")
         logger.info(f"[BUG3] Full prompt first 300 chars: {full_prompt[:300]}")
 
-        # Query with FileSearch tool
-        response = gemini_client.models.generate_content(
-            model=Config.MODEL_NAME,
-            contents=full_prompt,
-            config=types.GenerateContentConfig(
-                tools=[
-                    types.Tool(
-                        file_search=types.FileSearch(
-                            file_search_store_names=[Config.FILE_SEARCH_STORE_ID]
-                        )
+        # Query with FileSearch tool - with retry logic for 503 errors
+        max_retries = Config.GEMINI_MAX_RETRIES
+        retry_delay = Config.GEMINI_RETRY_DELAY  # Start with configured delay (exponential backoff)
+
+        for attempt in range(max_retries):
+            try:
+                if attempt > 0:
+                    logger.warning(f"[RETRY] Attempt {attempt + 1}/{max_retries} after {retry_delay}s delay")
+                    time.sleep(retry_delay)
+
+                response = gemini_client.models.generate_content(
+                    model=Config.MODEL_NAME,
+                    contents=full_prompt,
+                    config=types.GenerateContentConfig(
+                        tools=[
+                            types.Tool(
+                                file_search=types.FileSearch(
+                                    file_search_store_names=[Config.FILE_SEARCH_STORE_ID]
+                                )
+                            )
+                        ],
+                        temperature=Config.TEMPERATURE,
+                        max_output_tokens=Config.MAX_OUTPUT_TOKENS,
+                        response_modalities=["TEXT"],
                     )
-                ],
-                temperature=Config.TEMPERATURE,
-                max_output_tokens=Config.MAX_OUTPUT_TOKENS,
-                response_modalities=["TEXT"],
-            )
-        )
+                )
+                # Success - break out of retry loop
+                if attempt > 0:
+                    logger.info(f"[RETRY] Successfully generated content on attempt {attempt + 1}")
+                break
+
+            except Exception as e:
+                error_str = str(e).lower()
+                is_503 = '503' in error_str or 'overloaded' in error_str or 'unavailable' in error_str
+
+                if is_503 and attempt < max_retries - 1:
+                    # 503 error and we have retries left
+                    logger.warning(f"[RETRY] 503 error on attempt {attempt + 1}, retrying with {retry_delay}s delay...")
+                    retry_delay *= 2  # Exponential backoff: 1s, 2s, 4s
+                    continue
+                else:
+                    # Either not a 503, or we're out of retries
+                    if is_503:
+                        logger.error(f"[RETRY] Failed after {max_retries} attempts with 503 errors")
+                    raise  # Re-raise the exception to be handled by outer try-except
 
         # Extract response text
         logger.info(f"[DEBUG] Gemini response candidates: {len(response.candidates) if response.candidates else 0}")
@@ -350,7 +379,7 @@ def handle_user_question(user_id, question):
         question: User's question text
 
     Returns:
-        None (sends response via Zalo)
+        bool: True if processing succeeded, False if failed (allows retry)
     """
     try:
         logger.info(f"[BUG2] === HANDLE_USER_QUESTION STARTED ===")
@@ -381,18 +410,33 @@ def handle_user_question(user_id, question):
             add_to_history(session_id, 'assistant', answer)
 
             logger.info(f"Answer for user {user_id}: {answer[:100]}...")
-        else:
-            answer = "Xin lỗi, đã xảy ra lỗi khi xử lý câu hỏi của bạn. / Sorry, there was an error processing your question."
-            logger.error(f"[BUG2] Failed to get answer from Gemini")
-            logger.error(f"Error processing question: {result.get('error')}")
 
-        # Send answer back to user
-        logger.info(f"[BUG2] Calling send_message_to_user")
-        send_start = datetime.now()
-        send_message_to_user(user_id, answer)
-        send_elapsed = (datetime.now() - send_start).total_seconds()
-        logger.info(f"[BUG2] send_message_to_user completed in {send_elapsed:.2f}s")
-        logger.info(f"[BUG2] === HANDLE_USER_QUESTION COMPLETED ===")
+            # Send answer back to user
+            logger.info(f"[BUG2] Calling send_message_to_user")
+            send_start = datetime.now()
+            send_message_to_user(user_id, answer)
+            send_elapsed = (datetime.now() - send_start).total_seconds()
+            logger.info(f"[BUG2] send_message_to_user completed in {send_elapsed:.2f}s")
+            logger.info(f"[BUG2] === HANDLE_USER_QUESTION COMPLETED SUCCESSFULLY ===")
+            return True  # Success - can mark message as processed
+
+        else:
+            # Check if it's a retryable error (503, timeout, etc)
+            error_msg = result.get('error', '')
+            is_retryable = '503' in str(error_msg) or 'overloaded' in str(error_msg).lower() or 'unavailable' in str(error_msg).lower()
+
+            if is_retryable:
+                logger.error(f"[BUG2] RETRYABLE ERROR from Gemini: {error_msg}")
+                answer = "Xin lỗi, hệ thống đang quá tải. Vui lòng thử lại sau ít phút. / Sorry, the system is overloaded. Please try again in a few minutes."
+                send_message_to_user(user_id, answer)
+                logger.info(f"[BUG2] === HANDLE_USER_QUESTION FAILED (RETRYABLE) ===")
+                return False  # Don't mark as processed - allow retry
+            else:
+                logger.error(f"[BUG2] NON-RETRYABLE ERROR from Gemini: {error_msg}")
+                answer = "Xin lỗi, đã xảy ra lỗi khi xử lý câu hỏi của bạn. / Sorry, there was an error processing your question."
+                send_message_to_user(user_id, answer)
+                logger.info(f"[BUG2] === HANDLE_USER_QUESTION FAILED (NON-RETRYABLE) ===")
+                return True  # Mark as processed - don't retry non-retryable errors
 
     except Exception as e:
         logger.error(f"[BUG2] === EXCEPTION IN HANDLE_USER_QUESTION ===")
@@ -400,13 +444,29 @@ def handle_user_question(user_id, question):
         logger.error(f"[BUG2] Exception message: {str(e)}")
         logger.error(f"Error handling question: {e}", exc_info=True)
 
+        # Check if it's a retryable exception
+        error_str = str(e).lower()
+        is_retryable = '503' in error_str or 'overloaded' in error_str or 'unavailable' in error_str or 'timeout' in error_str
+
         # Send error message to user
-        error_message = "Xin lỗi, hệ thống đang gặp sự cố. Vui lòng thử lại sau. / Sorry, the system is experiencing issues. Please try again later."
+        if is_retryable:
+            error_message = "Xin lỗi, hệ thống đang quá tải. Vui lòng thử lại sau ít phút. / Sorry, the system is overloaded. Please try again in a few minutes."
+        else:
+            error_message = "Xin lỗi, hệ thống đang gặp sự cố. Vui lòng thử lại sau. / Sorry, the system is experiencing issues. Please try again later."
+
         try:
             send_message_to_user(user_id, error_message)
             logger.info(f"[BUG2] Error message sent to user {user_id}")
         except Exception as send_error:
             logger.error(f"[BUG2] Failed to send error message: {send_error}", exc_info=True)
+
+        # Return False for retryable errors, True for others
+        if is_retryable:
+            logger.warning(f"[BUG2] Exception is retryable - returning False to allow retry")
+            return False
+        else:
+            logger.warning(f"[BUG2] Exception is not retryable - returning True to mark as processed")
+            return True
 
 
 # ============================================================================
@@ -475,27 +535,30 @@ def zalo_webhook():
             logger.warning(f"Empty message from user {user_id}")
             return jsonify({"status": "success", "message": "Empty message ignored"}), 200
 
-        # Add to processed messages for deduplication
-        if msg_id:
-            logger.info(f"[BUG2][DEDUP] Adding msg_id {msg_id} to processed set")
-            processed_messages.add(msg_id)
-            # Limit memory: remove oldest if too many
-            if len(processed_messages) > MAX_PROCESSED_MESSAGES:
-                removed_id = processed_messages.pop()
-                logger.warning(f"[BUG2][DEDUP] Removed msg_id {removed_id} due to size limit")
-            logger.info(f"[BUG2][DEDUP] Added msg_id {msg_id} to processed set (total: {len(processed_messages)})")
-
         # Process the question with Gemini RAG chatbot
         logger.info(f"[BUG2][TIMING] Starting handle_user_question for user {user_id}")
         start_time = datetime.now()
 
-        handle_user_question(user_id, user_message)
+        # Try to process - only mark as processed if successful
+        processing_success = handle_user_question(user_id, user_message)
 
         elapsed = (datetime.now() - start_time).total_seconds()
         logger.info(f"[BUG2][TIMING] Completed handle_user_question in {elapsed:.2f}s")
 
         if elapsed > 10:
             logger.warning(f"[BUG2][TIMING] SLOW RESPONSE: Took {elapsed:.2f}s to process question")
+
+        # Only add to processed messages if processing was successful
+        if processing_success and msg_id:
+            logger.info(f"[BUG2][DEDUP] Adding msg_id {msg_id} to processed set (successful processing)")
+            processed_messages.add(msg_id)
+            # Limit memory: remove oldest if too many
+            if len(processed_messages) > MAX_PROCESSED_MESSAGES:
+                removed_id = processed_messages.pop()
+                logger.warning(f"[BUG2][DEDUP] Removed msg_id {removed_id} due to size limit")
+            logger.info(f"[BUG2][DEDUP] Successfully added msg_id {msg_id} (total: {len(processed_messages)})")
+        elif not processing_success and msg_id:
+            logger.warning(f"[BUG2][DEDUP] NOT adding msg_id {msg_id} - processing failed, allow retry")
 
         return jsonify({"status": "success", "message": "Question processed"}), 200
 

@@ -16,7 +16,11 @@ class Config:
     FILE_SEARCH_STORE_ID = os.getenv('FILE_SEARCH_STORE_ID')
 
     # Model Configuration
-    MODEL_NAME = 'gemini-2.5-flash'  # or 'gemini-2.5-pro' for better quality
+    MODEL_NAME = 'gemini-2.5-flash'  # or 'gemini-1.5-flash' (more stable, less 503s)
+    # Options:
+    #   - gemini-2.5-flash: Latest, fastest, but may have more 503s during peak hours
+    #   - gemini-1.5-flash: Stable, proven, fewer 503s (recommended if 503s are frequent)
+    #   - gemini-1.5-pro: Better quality, more stable, but slower and more expensive
 
     # Flask Configuration
     SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production')
@@ -31,6 +35,10 @@ class Config:
     MAX_HISTORY_LENGTH = 10
     TEMPERATURE = 0.0  # Fully deterministic responses (0.0 = no randomness)
     MAX_OUTPUT_TOKENS = 1500  # Allow complete answers while staying concise
+
+    # Retry Configuration (for handling 503 errors)
+    GEMINI_MAX_RETRIES = 3  # Number of retry attempts for 503/overloaded errors
+    GEMINI_RETRY_DELAY = 1  # Initial retry delay in seconds (exponential backoff)
 
     # Zalo Message Limits
     ZALO_MAX_MESSAGE_LENGTH = 2000  # Conservative limit for Zalo OA messages (chars)
