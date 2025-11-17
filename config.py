@@ -38,7 +38,7 @@ class Config:
 
     # Retry Configuration (for handling 503 errors)
     GEMINI_MAX_RETRIES = 3  # Number of retry attempts for 503/overloaded errors
-    GEMINI_RETRY_DELAY = 1  # Initial retry delay in seconds (exponential backoff)
+    GEMINI_RETRY_DELAY = 10  # Initial retry delay in seconds (exponential backoff)
 
     # Zalo Message Limits
     ZALO_MAX_MESSAGE_LENGTH = 2000  # Conservative limit for Zalo OA messages (chars)
